@@ -54,4 +54,5 @@ form{
 
 #plateau{
 	display: flex;
+	flex-direction: column;
 }
