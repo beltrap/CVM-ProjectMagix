@@ -51,3 +51,7 @@ form{
     bottom: 10px;
 	left: calc(50% - 350px);
 }
+
+#plateau{
+	display: flex;
+}
