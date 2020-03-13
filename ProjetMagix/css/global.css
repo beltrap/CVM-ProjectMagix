@@ -172,12 +172,13 @@ form{
 	width: 15%;
 	margin: 5px;
 	padding: 0.2em;
-	background-color: black;
+	background-color:white;
 }
 .carte{
 	display:grid;
 	grid-template-columns: repeat(3,1fr);
 	grid-template-rows: repeat(7,auto);
+	z-index: 4;
 }
 
 .nomCarte{

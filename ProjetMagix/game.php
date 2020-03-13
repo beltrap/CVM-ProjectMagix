@@ -6,6 +6,7 @@
 
 	require_once("partial/header.php");
 ?>
+<script src="js/ajax.js"></script>
 
 <template id="temCarte">
 		<div class="nomCarte"></div>
