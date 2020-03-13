@@ -19,7 +19,6 @@
 					// err
 				}
 				else {
-					var_dump($result);
 					// Pour voir les informations retournées : var_dump($result);exit;
 					$key = $result->key;
 					var_dump($key);

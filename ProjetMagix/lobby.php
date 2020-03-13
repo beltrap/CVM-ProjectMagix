@@ -7,8 +7,8 @@
 	require_once("partial/header.php");
 ?>
 <div id="lobbyMenu">
-	<a href="lobby.php" class="btnMenu">Pratique</a>
-	<a href="lobby.php" class="btnMenu">Jouer</a>
+	<a href="game.php?type=TRAINING" class="btnMenu">Pratique</a>
+	<a href="game.php?type=PVP" class="btnMenu">Jouer</a>
 	<a href="lobby.php?logout=1" class="btnMenu">Quitter</a>
 </div>
 <div id="frame">

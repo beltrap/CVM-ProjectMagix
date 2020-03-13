@@ -8,7 +8,19 @@
 		}
 
 		protected function executeAction() {
+			
+			$data = [];
+			$data["key"] = $_SESSION["key"];
+			$data["type"] = $_GET["type"];
 
+			$result = parent::callAPI("games/auto-match", $data);
+
+			if ($result !== "JOINED_PVP" ||
+				$result !== "CREATED_PVP" ||
+				$result !== "JOINED_TRAINING"){
+					header("location:lobby.php");
+					exit;
+				}
 			return [];
 		}
 	}
