@@ -24,6 +24,7 @@ const state = ()=> {
 const vue = response =>{
     if (typeof response !== "object"){
         console.log(response);
+        
     }
     else{
         document.querySelector("#plateau").innerHTML = ""
@@ -50,6 +51,7 @@ const vue = response =>{
         bordA.querySelector(".deck").innerHTML = opponent.remainingCardsCount
 
 
+        
         // partie terrain
         let terrain = document.createElement("div")
         terrain.id = "terrain"
@@ -60,35 +62,7 @@ const vue = response =>{
         boardAd.querySelector(".energie").innerHTML = opponent.mp
 
         for (let i=0; i < opponent.board.length; i++){
-            carte = document.createElement("div")
-            carte.className = "carte"
-
-            let nomC = document.createElement("div")
-            nomC.className = "nomCarte"
-            let prixC = document.createElement("div")
-            prixC.className = "prixCarte"
-            let imgC = document.createElement("div")
-            imgC.className = "imageCarte"
-            let desC = document.createElement("div")
-            desC.className = "descCarte"
-            let attackC = document.createElement("div")
-            attackC.className = "attackCarte"
-            let vieC = document.createElement("div")
-            vieC.className = "vieCarte"
-
-            nomC.innerHTML = opponent.board[i].uid
-            prixC.innerHTML = opponent.board[i].cost
-            imgC.innerHTML = opponent.board[i].id
-            desC.innerHTML = opponent.board[i].mechanics
-            attackC.innerHTML = opponent.board[i].atk
-            vieC.innerHTML = opponent.board[i].hp
-
-            carte.appendChild(nomC)
-            carte.appendChild(prixC)
-            carte.appendChild(imgC)
-            carte.appendChild(desC)
-            carte.appendChild(attackC)
-            carte.appendChild(vieC)
+            carte = createCarte(opponent.board[i])
 
             carte.onclick = () =>{
                 if (focusJoueur !== ""){
@@ -104,38 +78,10 @@ const vue = response =>{
         board.querySelector(".energie").innerHTML = response.mp
 
         for (let i=0; i < response.board.length; i++){
-            carte = document.createElement("div")
-            carte.className = "carte"
-
-            let nomC = document.createElement("div")
-            nomC.className = "nomCarte"
-            let prixC = document.createElement("div")
-            prixC.className = "prixCarte"
-            let imgC = document.createElement("div")
-            imgC.className = "imageCarte"
-            let desC = document.createElement("div")
-            desC.className = "descCarte"
-            let attackC = document.createElement("div")
-            attackC.className = "attackCarte"
-            let vieC = document.createElement("div")
-            vieC.className = "vieCarte"
-
-            nomC.innerHTML = response.board[i].uid
-            prixC.innerHTML = response.board[i].cost
-            imgC.innerHTML = response.board[i].id
-            desC.innerHTML = response.board[i].mechanics
-            attackC.innerHTML = response.board[i].atk
-            vieC.innerHTML = response.board[i].hp
-
-            carte.appendChild(nomC)
-            carte.appendChild(prixC)
-            carte.appendChild(imgC)
-            carte.appendChild(desC)
-            carte.appendChild(attackC)
-            carte.appendChild(vieC)
+            carte = createCarte(response.board[i])
 
             carte.onclick = (e)=>{
-                focusJoueur = response.board[i].uid;
+                focusJoueur = response.board[i].uid
                 e.stopPropagation()
             }
 
@@ -163,35 +109,7 @@ const vue = response =>{
 
         for (let i=0; i < response.hand.length; i++){
 
-            carte = document.createElement("div")
-            carte.className = "carte"
-
-            let nomC = document.createElement("div")
-            nomC.className = "nomCarte"
-            let prixC = document.createElement("div")
-            prixC.className = "prixCarte"
-            let imgC = document.createElement("div")
-            imgC.className = "imageCarte"
-            let desC = document.createElement("div")
-            desC.className = "descCarte"
-            let attackC = document.createElement("div")
-            attackC.className = "attackCarte"
-            let vieC = document.createElement("div")
-            vieC.className = "vieCarte"
-
-            nomC.innerHTML = response.hand[i].uid
-            prixC.innerHTML = response.hand[i].cost
-            imgC.innerHTML = response.hand[i].id
-            desC.innerHTML = response.hand[i].mechanics
-            attackC.innerHTML = response.hand[i].atk
-            vieC.innerHTML = response.hand[i].hp
-
-            carte.appendChild(nomC)
-            carte.appendChild(prixC)
-            carte.appendChild(imgC)
-            carte.appendChild(desC)
-            carte.appendChild(attackC)
-            carte.appendChild(vieC)
+            carte = createCarte(response.hand[i])
             carte.onclick = function (){
                 focusJoueur = response.hand[i].uid;
             }
@@ -289,4 +207,38 @@ const attack = (uid, targetUid)=>{
         focusJoueur = ""
         vue(response)
     })
+}
+
+const createCarte = (info) =>{
+    let carte = document.createElement("div")
+    carte.className = "carte"
+
+    let nomC = document.createElement("div")
+    nomC.className = "nomCarte"
+    let prixC = document.createElement("div")
+    prixC.className = "prixCarte"
+    let imgC = document.createElement("div")
+    imgC.className = "imageCarte"
+    let desC = document.createElement("div")
+    desC.className = "descCarte"
+    let attackC = document.createElement("div")
+    attackC.className = "attackCarte"
+    let vieC = document.createElement("div")
+    vieC.className = "vieCarte"
+
+    nomC.innerHTML = info.uid
+    prixC.innerHTML = info.cost
+    imgC.innerHTML = info.id
+    desC.innerHTML = info.mechanics
+    attackC.innerHTML = info.atk
+    vieC.innerHTML = info.hp
+
+    carte.appendChild(nomC)
+    carte.appendChild(prixC)
+    carte.appendChild(imgC)
+    carte.appendChild(desC)
+    carte.appendChild(attackC)
+    carte.appendChild(vieC)
+
+    return carte
 }

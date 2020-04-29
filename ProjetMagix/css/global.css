@@ -215,3 +215,8 @@ form{
 	grid-row: 7;
 	background-color: blue;
 }
+body{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
