@@ -7,7 +7,7 @@
 	require_once("partial/header.php");
 ?>
 <script src="js/ajax.js"></script>
-
+<script src="js/sprite/spanner.js"></script>
 <template id="temCarte">
 		<div class="nomCarte"></div>
 		<div class="prixCarte"></div>
@@ -29,7 +29,7 @@
 </template>
 
 <div id="plateau">
-		
+		<div id="info"></div>
 </div>
 <?php
 	require_once("partial/footer.php");

@@ -1,4 +1,3 @@
-
 window.addEventListener("load", () =>{
     setTimeout(state,1000)
 })
@@ -25,10 +24,26 @@ const vue = response =>{
     document.querySelector("body").width = window.innerWidth
     document.querySelector("body").height = window.innerHeight
     if (typeof response !== "object"){
-        console.log(response);
+
+        let info = document.querySelector("#info");
+        info.style.display = "block";
+        if (response == "WAITING"){
+            info.innerHTML = "Recherche de joueur"
+        }else if (response == "LAST_GAME_WON"){
+            info.innerHTML = "VICTOIRE !!! (cliquer pour continuer)"
+            info.onclick = () =>{
+                document.location.href = "lobby.php"
+            }
+        }else if (response == "LAST_GAME_LOST"){
+            info.innerHTML = "Vous avez perdu T_T (cliquer pour continuer"
+            info.onclick = ()=>{
+                document.location.href = "lobby.php"
+            }
+        }
         
     }
     else{
+        // document.querySelector("#info").style.display = "none"
         document.querySelector("#plateau").innerHTML = ""
 
         // partie bord adversaire
@@ -50,7 +65,7 @@ const vue = response =>{
             }
         }
 
-        bordA.querySelector(".deck").innerHTML = opponent.remainingCardsCount
+        // bordA.querySelector(".deck").innerHTML = response.remainingTurnTime
 
 
         
@@ -124,7 +139,7 @@ const vue = response =>{
         }
 
 
-        bordY.querySelector(".deck").innerHTML = response.remainingCardsCount
+        bordY.querySelector(".deck").innerHTML = response.remainingTurnTime
 
         bordY.querySelector(".deck").onclick = ()=>{
             end()

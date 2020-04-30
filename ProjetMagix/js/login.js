@@ -11,8 +11,8 @@ let spriteList = []
 window.addEventListener("load", () =>{
 	canvas = document.querySelector("canvas")
     ctx = canvas.getContext("2d")
-    spriteList.push(new Human(window.innerWidth/2 + 100, window.innerHeight- 70, "img/canvasTsuna.png", 0))
-    spriteList.push(new Human(window.innerWidth/2 - 100, window.innerHeight- 70, "img/canvasXanxus.png", -30))
+    spriteList.push(new Human(window.innerWidth + 200, window.innerHeight- 70, "img/canvasTsuna.png", 0))
+    spriteList.push(new Human(window.innerWidth + 200, window.innerHeight- 70, "img/canvasXanxus.png", -300))
 
 	tick()
 })
