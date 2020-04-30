@@ -8,6 +8,8 @@
 ?>
 <script src="js/lobby.js"></script>
 <script src="js/sprite/reborn.js"></script>
+<canvas id="lobbyC" width="1980" height="1080">
+    </canvas>
 <div id="lobbyMenu">
 	<a href="game.php?type=TRAINING" class="btnMenu">Pratique</a>
 	<a href="game.php?type=PVP" class="btnMenu">Jouer</a>

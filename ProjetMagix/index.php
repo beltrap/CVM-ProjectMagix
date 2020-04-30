@@ -8,7 +8,8 @@
 ?>
 <script src="js/sprite/humain.js"></script>
 <script src="js/login.js"></script>
-
+<canvas width="1980" height="1080">
+    </canvas>
 <div id="content-page">
     <form action="index.php" method="post">
             <input type="text" name="username" id="username" placeholder="Votre nom de compte">

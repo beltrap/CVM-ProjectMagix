@@ -4,7 +4,7 @@ class Reborn {
 		this.y = posY;
         this.maxX = maxX;
         this.direction = false;
-        this.speed = 2
+        this.speed = 5
 		// Param necessaire
 		let columnCount = 5;
 		let rowCount = 1;
