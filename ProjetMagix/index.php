@@ -6,6 +6,9 @@
 
     require_once("partial/header.php");
 ?>
+<script src="js/sprite/humain.js"></script>
+<script src="js/login.js"></script>
+
 <div id="content-page">
     <form action="index.php" method="post">
             <input type="text" name="username" id="username" placeholder="Votre nom de compte">

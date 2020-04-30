@@ -1,17 +1,16 @@
 let canvas = null
-let ctx = null // Graphics de JAVA
+let ctx = null
 let fond = new Image()
-fond.src = "img/fondHQ.png"
-// fond.src = "img/hqdefault.jpg"
-// fond.src = "img/fondLogin.png"
+fond.src = "img/zone/lobby.png"
 
 
 let spriteList = []
 
 window.addEventListener("load", () =>{
-	canvas = document.querySelector("canvas")
+	canvas = document.querySelector("#lobbyC")
     ctx = canvas.getContext("2d")
-    spriteList.push(new Human(window.innerWidth/2 - 100, window.innerHeight- 70))
+    spriteList.push(new Reborn(window.innerWidth/2 + 100, window.innerHeight*0.72))
+
 	tick()
 })
 

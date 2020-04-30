@@ -22,6 +22,8 @@ const state = ()=> {
 }
 
 const vue = response =>{
+    document.querySelector("body").width = window.innerWidth
+    document.querySelector("body").height = window.innerHeight
     if (typeof response !== "object"){
         console.log(response);
         
@@ -228,7 +230,8 @@ const createCarte = (info) =>{
 
     nomC.innerHTML = info.uid
     prixC.innerHTML = info.cost
-    imgC.innerHTML = info.id
+    imgC.style.backgroundImage = "url(img/icone/"+ info.id +".png)"
+    // imgC.innerHTML = info.id
     desC.innerHTML = info.mechanics
     attackC.innerHTML = info.atk
     vieC.innerHTML = info.hp

@@ -1,16 +1,16 @@
 class Human {
-	constructor(maxX, posY) {
-		this.x = 0;
+	constructor(maxX, posY, perso, posX) {
+		this.x = posX;
 		this.y = posY;
 		this.maxX = maxX;
 		// Param necessaire
-		let columnCount = 7;
+		let columnCount = 6;
 		let rowCount = 1;
 		let refreshDelay = 100;
 		let scale = 1;
 		let columnLoop = true;
 
-		this.tiledImage = new TiledImage("img/cartes/giottoC.png",
+		this.tiledImage = new TiledImage(perso,
 										columnCount, rowCount, refreshDelay,
 										columnLoop,scale);
 		// this.tiledImage.changeRow(this.direction);

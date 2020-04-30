@@ -6,6 +6,8 @@
 
 	require_once("partial/header.php");
 ?>
+<script src="js/lobby.js"></script>
+<script src="js/sprite/reborn.js"></script>
 <div id="lobbyMenu">
 	<a href="game.php?type=TRAINING" class="btnMenu">Pratique</a>
 	<a href="game.php?type=PVP" class="btnMenu">Jouer</a>
