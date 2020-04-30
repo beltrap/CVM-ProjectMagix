@@ -55,6 +55,7 @@ form{
 #plateau{
 	display: flex;
 	flex-direction: column;
+	height: 100%;
 }
 
 /* cote adversaire */
@@ -127,7 +128,7 @@ form{
 
 .cristaux{
 	height: 2vh;
-	background-image: url("../img/flamme.jpg");
+	background-image: url("../img/flamme.png");
 	background-size: cover;
 	margin: 5px;
 }
@@ -189,11 +190,15 @@ form{
 .prixCarte{
 	grid-column: 3;
 	grid-row: 1;
-	background-image: url("../img/flamme.jpg");
+	background-image: url("../img/flamme.png");
+	background-repeat: no-repeat;
+	background-position-y: -25px;
+	background-position-x: 5px;
 	background-size: cover;
 	padding-top: 10%;
 	text-align: center;
-	color: white;
+	color: green;
+	font-weight: bold;
 }
 
 
