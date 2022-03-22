@@ -6,6 +6,7 @@
 
 	require_once("partial/header.php");
 ?>
+<script src="js/common/model.js"></script>
 <script src="js/lobby.js"></script>
 <script src="js/sprite/reborn.js"></script>
 <canvas id="lobbyC" width="1980" height="1080">
